@@ -24,6 +24,7 @@
       	<form name="calculate"><input type="submit" value="отправить"/></form>
       	<p>Результат:</p>
       	<p id="result"></p>
+      	<p>Результат округления:</p><p id="log1"></p><p id="log2"></p><p id="log3"></p><p id="log4"></p>
       </center>
     </div>
   <script type="text/javascript">
@@ -33,10 +34,10 @@
 	  var packcig3 = Number(document.getElementById("pack3").value);
 	  var packcig4 = Number(document.getElementById("pack4").value);
 
-	  var onecig1 = packcig1 / 20;
-	  var onecig2 = packcig2 / 20;
-	  var onecig3 = packcig3 / 20;
-	  var onecig4 = packcig4 / 20;
+	  var onecig1 = Math.ceil(packcig1 / 20);
+	  var onecig2 = Math.ceil(packcig2 / 20);
+	  var onecig3 = Math.ceil(packcig3 / 20);
+	  var onecig4 = Math.ceil(packcig4 / 20);
 
 	  var percentcig1 = onecig1 * 1.20;
 	  var percentcig2 = onecig2 * 1.20;
@@ -52,6 +53,11 @@
 
 	  var result = umn1 + umn2 + umn3 + umn4;
 	  document.getElementById("result").innerHTML = result;
+	  document.getElementById("log1").innerHTML = onecig1;
+	  document.getElementById("log2").innerHTML = onecig2;
+	  document.getElementById("log3").innerHTML = onecig3;
+	  document.getElementById("log4").innerHTML = onecig4;
+
 	  return false;
 	};
   </script>
