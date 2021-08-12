@@ -35,15 +35,22 @@
 
 	  var onecig1 = packcig1 / 20;
 	  var onecig2 = packcig2 / 20;
+	  var onecig3 = packcig3 / 20;
+	  var onecig4 = packcig4 / 20;
 
-	  var percentcig1 = onecig1 + 20%;
-	  var percentcig2 = onecig2 + 20%;
+	  var percentcig1 = onecig1 * 1.20;
+	  var percentcig2 = onecig2 * 1.20;
+	  var percentcig3 = onecig3 * 1.20;
+	  var percentcig4 = onecig4 * 1.20;
 
 	  var umn1 = percentcig1 * 10; 
 	  var umn2 = percentcig2 * 10; 
+	  var umn3 = percentcig3 * 10; 
+	  var umn4 = percentcig4 * 10; 
 
 
-	  var result = umn1 + umn2;
+
+	  var result = umn1 + umn2 + umn3 + umn4;
 	  document.getElementById("result").innerHTML = result;
 	  return false;
 	};
