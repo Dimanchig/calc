@@ -22,17 +22,19 @@
       </center>
       <center>
       	<form name="calculate"><input type="submit" value="отправить"/></form>
+      	<p>Результат:</p>
+      	<p id="result"></p>
       </center>
     </div>
   <script type="text/javascript">
   	document.forms.calculate.onsubmit = function() {
-	  var packcig1 = document.getElementById("pack1").value;
-	  var packcig2 = document.getElementById("pack2").value;
-	  var packcig3 = document.getElementById("pack3").value;
-	  var packcig4 = document.getElementById("pack4").value;
+	  var packcig1 = Number(document.getElementById("pack1").value);
+	  var packcig2 = Number(document.getElementById("pack2").value);
+	  var packcig3 = Number(document.getElementById("pack3").value);
+	  var packcig4 = Number(document.getElementById("pack4").value);
 
 	  var result = packcig1 + packcig2;
-	  console.log(result)
+	  document.getElementById("result").innerHTML = result;
 	  return false;
 	};
   </script>
