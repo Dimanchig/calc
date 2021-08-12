@@ -33,7 +33,17 @@
 	  var packcig3 = Number(document.getElementById("pack3").value);
 	  var packcig4 = Number(document.getElementById("pack4").value);
 
-	  var result = packcig1 + packcig2;
+	  var onecig1 = packcig1 / 20;
+	  var onecig2 = packcig2 / 20;
+
+	  var percentcig1 = onecig1 + 20%;
+	  var percentcig2 = onecig2 + 20%;
+
+	  var umn1 = percentcig1 * 10; 
+	  var umn2 = percentcig2 * 10; 
+
+
+	  var result = umn1 + umn2;
 	  document.getElementById("result").innerHTML = result;
 	  return false;
 	};
