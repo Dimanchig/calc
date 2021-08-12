@@ -20,10 +20,16 @@
         	<input name="pack4" type="number" placeholder="Цена 4 пачки сигарет"/>  
         </form>
       </center>
-      <center><input type="submit" value="отправить"/></center>
+      <center>
+      	<form name="calculate"><input type="submit" value="отправить"/></form>
+      </center>
     </div>
   <script type="text/javascript">
-  	
+  	document.forms.calculate.onsubmit = function() {
+	  var packcig1 = this.pack1.value;
+	  console.log(packcig1)
+	  return false;
+	};
   </script>
   </body>
 </html>
