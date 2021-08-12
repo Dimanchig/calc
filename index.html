@@ -18,23 +18,31 @@
 		  top: 3px;
 		  color:red;
 		}
+		input {
+		width: 300px;
+		font-size: 13px;
+		padding: 6px 0 4px 10px;
+		border: 1px solid #cecece;
+		background: #F6F6f6;
+		border-radius: 8px;
+	}
     </style>
   </head>
   <body>
     <div>
       <center>
         <form name="packs1">
-        	<input name="pack1" id="pack1" type="text" placeholder="Цена 1 пачки сигарет" style="width:200px"/><span class="required">&#8376;</span> 
+        	<input name="pack1" id="pack1" type="text" placeholder="Цена 1 пачки сигарет" style="width:300px"/><span class="required">&#8376;</span> 
         </form>
         <form name="packs2">
-        	<input name="pack2" id="pack2" type="text" placeholder="Цена 2 пачки сигарет" style="width:200px"/><span class="required">&#8376;</span>   
+        	<input name="pack2" id="pack2" type="text" placeholder="Цена 2 пачки сигарет" style="width:300px"/><span class="required">&#8376;</span>   
         </form>
         <form name="percent">
-        	<input class="percent" id="percent" type="text" placeholder="Процент" style="width:200px"/><span class="requiredperc">&#37;</span>  
+        	<input class="percent" id="percent" type="text" placeholder="Процент" style="width:300px"/><span class="requiredperc">&#37;</span>  
         </form>
       </center>
       <center>
-      	<form name="calculate"><input type="submit" value="отправить"/></form>
+      	<form name="calculate"><input type="submit" value="Произвести расчет" style="width:300px"/></form>
       	<p>В результате стоимость одной пачки:</p>
       	<p id="result"></p>
       	<p>Стоимость одной сигареты без процентов:</p><p id="log1"></p><p id="log2"></p>
