@@ -3,16 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calculation</title>
-    <script src="jquery-3.6.0.min.js"></script>
+    <title>Fluff</title>
     <style>
-    	@font-face {
-		    font-family: 'bw_mitgabold';
-		    src: url('bwmitga-bold-webfont.woff2') format('woff2'),
-		         url('bwmitga-bold-webfont.woff') format('woff');
-		    font-weight: normal;
-		    font-style: normal;
-
 		}
     	.required{
 		  position:relative;
@@ -47,13 +39,12 @@
 		p {
 			letter-spacing: 5px;
 		}
-
     </style>
   </head>
   <body>
   	<div>
   		<center>
-  			<p style="font-size: 40px; color: white; font-family: 'Klaxons'">Fluff</p>
+  			<p style="font-size: 40px; color: white; font-family: 'Klaxons'">FLUFF</p>
   		</center>
   </div>
     <div>
@@ -93,20 +84,13 @@
 	  var packcig1 = Number(document.getElementById("pack1").value);
 	  var packcig2 = Number(document.getElementById("pack2").value);
 	  var percent = Number(document.getElementById("percent").value);
-
 	  var percentitog = (percent / 100) + 1;
-
 	  var onecig1 = packcig1 / 20;
 	  var onecig2 = packcig2 / 20;
-
 	  var percentcig1 = Math.ceil(onecig1 * percentitog);
 	  var percentcig2 = Math.ceil(onecig2 * percentitog);
-
 	  var umn1 = percentcig1 * 10; 
 	  var umn2 = percentcig2 * 10; 
-
-
-
 	  var result = umn1 + umn2;
 	  document.getElementById("result").innerHTML = result + " тенге";
 	  document.getElementById("log1").innerHTML = onecig1 + " тенге";
@@ -115,8 +99,6 @@
 	  document.getElementById("logokr2").innerHTML = percentcig2 + " тенге";
 	  return false;
 	};
-	
-
   </script>
   </body>
 </html>
