@@ -6,6 +6,14 @@
     <title>Calculation</title>
     <script src="jquery-3.6.0.min.js"></script>
     <style>
+    	@font-face {
+		    font-family: 'bw_mitgabold';
+		    src: url('bwmitga-bold-webfont.woff2') format('woff2'),
+		         url('bwmitga-bold-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+
+		}
     	.required{
 		  position:relative;
 		  right:15px;
@@ -26,30 +34,58 @@
 		background: #F6F6f6;
 		border-radius: 8px;
 	}
+		body {
+			background-color: black;
+			@font-face {
+			   font-family: Comfortaa; /* Гарнитура шрифта */
+			   src: url(Comfortaa.ttf); /* Путь к файлу со шрифтом */
+			   font-family: Arial, Helvetica, sans-serif; 
+			   font-family: Klaxons; /* Гарнитура шрифта */
+			   src: url(Klaxons.ttf); /* Путь к файлу со шрифтом */
+		  }
+		}
+		p {
+			letter-spacing: 5px;
+		}
+
     </style>
   </head>
   <body>
+  	<div>
+  		<center>
+  			<p style="font-size: 40px; color: white; font-family: 'Klaxons'">Fluff</p>
+  		</center>
+  </div>
     <div>
       <center>
         <form name="packs1">
-        	<input name="pack1" id="pack1" type="text" placeholder="Цена 1 пачки сигарет" style="width:300px"/><span class="required">&#8376;</span> 
+        	<input name="pack1" id="pack1" type="text" placeholder="Цена 1 пачки сигарет" style="width:400px; height: 30px; font-size: 15px;"/><span class="required">*</span> 
         </form>
     	</br>
         <form name="packs2">
-        	<input name="pack2" id="pack2" type="text" placeholder="Цена 2 пачки сигарет" style="width:300px"/><span class="required">&#8376;</span>   
+        	<input name="pack2" id="pack2" type="text" placeholder="Цена 2 пачки сигарет" style="width:400px; height: 30px; font-size: 15px;"/><span class="required">*</span>   
         </form>
         </br>
         <form name="percent">
-        	<input class="percent" id="percent" type="text" placeholder="Процент" style="width:300px"/><span class="requiredperc">&#8376;</span>  
+        	<input class="percent" id="percent" type="text" placeholder="Процент" style="width:400px; height: 30px; font-size: 15px;"/><span class="requiredperc">*</span>  
         </form>
         </br>
       </center>
       <center>
-      	<form name="calculate"><input type="submit" value="Произвести расчет" style="width:300px"/></form>
-      	<p>В результате стоимость одной пачки:</p>
-      	<p id="result"></p>
-      	<p>Стоимость одной сигареты без процентов:</p><p id="log1"></p><p id="log2"></p>
-      	<p>Стоимость одной сигареты c округлением и процентами:</p><p id="logokr1"></p><p id="logokr2"></p>
+      	<form name="calculate"><input style="font-size: 15px;"type="submit" value="Произвести расчет" style="width:300px"/></form></br>
+      	<span style="color: white; font-family: 'Comfortaa'">Стоимость одной пачки с процентами:</span></br>
+      	<span style="color: white; font-family: 'Comfortaa'">Итоговая цена:</span>
+      	<span style="color: red; font-family: 'Comfortaa';" id="result"></span></br></br>
+      	<span style="color: white; font-family: 'Comfortaa'">Стоимость одной сигареты без процентов:</span></br>
+      	<span style="color: white; font-family: 'Comfortaa'">Сигарета из 1 пачки:</span>
+      	<span style="color: red;" id="log1"></span></br>
+      	<span style="color: white; font-family: 'Comfortaa'">Сигарета из 2 пачки:</span>
+      	<span style="color: red;" id="log2"></span></br></br>
+      	<span style="color: white; font-family: 'Comfortaa'">Стоимость одной сигареты c округлением и процентами:</span></br>
+      	<span style="color: white; font-family: 'Comfortaa'">Сигарета из 1 пачки:</span>
+      	<span style="color: red;" id="logokr1"></span></br>
+      	<span style="color: white; font-family: 'Comfortaa'">Сигарета из 2 пачки:</span>
+      	<span style="color: red;" id="logokr2"></span></br>
       </center>
     </div>
   <script type="text/javascript">
@@ -72,11 +108,11 @@
 
 
 	  var result = umn1 + umn2;
-	  document.getElementById("result").innerHTML = result + " тг";
-	  document.getElementById("log1").innerHTML = onecig1 + " тг";
-	  document.getElementById("log2").innerHTML = onecig2 + " тг";
-	  document.getElementById("logokr1").innerHTML = percentcig1 + " тг";
-	  document.getElementById("logokr2").innerHTML = percentcig2 + " тг";
+	  document.getElementById("result").innerHTML = result + " тенге";
+	  document.getElementById("log1").innerHTML = onecig1 + " тенге";
+	  document.getElementById("log2").innerHTML = onecig2 + " тенге";
+	  document.getElementById("logokr1").innerHTML = percentcig1 + " тенге";
+	  document.getElementById("logokr2").innerHTML = percentcig2 + " тенге";
 	  return false;
 	};
 	
