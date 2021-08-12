@@ -8,7 +8,7 @@
     <div>
       <center>
         <form name="packs1">
-        	<input name="pack1" type="number" placeholder="Цена 1 пачки сигарет" /> 
+        	<input name="pack1" id="pack1" type="number" placeholder="Цена 1 пачки сигарет" /> 
         </form>
         <form name="packs2">
         	<input name="pack2" type="number" placeholder="Цена 2 пачки сигарет"/>  
@@ -26,7 +26,7 @@
     </div>
   <script type="text/javascript">
   	document.forms.calculate.onsubmit = function() {
-	  var packcig1 = this.pack1.value;
+	  var packcig1 = document.getElementById("pack1");
 	  console.log(packcig1)
 	  return false;
 	};
