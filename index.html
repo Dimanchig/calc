@@ -13,51 +13,37 @@
         <form name="packs2">
         	<input name="pack2" id="pack2" type="number" placeholder="Цена 2 пачки сигарет"/>  
         </form>
-        <form name="packs3">
-        	<input name="pack3" id="pack3" type="number" placeholder="Цена 3 пачки сигарет"/>  
-        </form>
-        <form name="packs4">
-        	<input name="pack4" id="pack4" type="number" placeholder="Цена 4 пачки сигарет"/>  
-        </form>
       </center>
       <center>
       	<form name="calculate"><input type="submit" value="отправить"/></form>
-      	<p>Результат:</p>
+      	<p>В результате стоимость одной пачки:</p>
       	<p id="result"></p>
-      	<p>Результат округления:</p><p id="log1"></p><p id="log2"></p><p id="log3"></p><p id="log4"></p>
+      	<p>Стоимость одной сигареты без процентов:</p><p id="log1"></p><p id="log2"></p>
+      	<p>Стоимость одной сигареты +20% c округлением:</p><p id="logokr1"></p><p id="logokr2"></p>
       </center>
     </div>
   <script type="text/javascript">
   	document.forms.calculate.onsubmit = function() {
 	  var packcig1 = Number(document.getElementById("pack1").value);
 	  var packcig2 = Number(document.getElementById("pack2").value);
-	  var packcig3 = Number(document.getElementById("pack3").value);
-	  var packcig4 = Number(document.getElementById("pack4").value);
 
-	  var onecig1 = Math.ceil(packcig1 / 20);
-	  var onecig2 = Math.ceil(packcig2 / 20);
-	  var onecig3 = Math.ceil(packcig3 / 20);
-	  var onecig4 = Math.ceil(packcig4 / 20);
+	  var onecig1 = packcig1 / 20;
+	  var onecig2 = packcig2 / 20;
 
-	  var percentcig1 = onecig1 * 1.20;
-	  var percentcig2 = onecig2 * 1.20;
-	  var percentcig3 = onecig3 * 1.20;
-	  var percentcig4 = onecig4 * 1.20;
+	  var percentcig1 = Math.ceil(onecig1 * 1.20);
+	  var percentcig2 = Math.ceil(onecig2 * 1.20);
 
 	  var umn1 = percentcig1 * 10; 
 	  var umn2 = percentcig2 * 10; 
-	  var umn3 = percentcig3 * 10; 
-	  var umn4 = percentcig4 * 10; 
 
 
 
-	  var result = umn1 + umn2 + umn3 + umn4;
-	  document.getElementById("result").innerHTML = result;
-	  document.getElementById("log1").innerHTML = onecig1;
-	  document.getElementById("log2").innerHTML = onecig2;
-	  document.getElementById("log3").innerHTML = onecig3;
-	  document.getElementById("log4").innerHTML = onecig4;
-
+	  var result = umn1 + umn2;
+	  document.getElementById("result").innerHTML = result + " тг";
+	  document.getElementById("log1").innerHTML = onecig1 + " тг";
+	  document.getElementById("log2").innerHTML = onecig2 + " тг";
+	  document.getElementById("logokr1").innerHTML = percentcig1 + " тг";
+	  document.getElementById("logokr2").innerHTML = percentcig2 + " тг";
 	  return false;
 	};
   </script>
