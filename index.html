@@ -11,13 +11,13 @@
         	<input name="pack1" id="pack1" type="number" placeholder="Цена 1 пачки сигарет" /> 
         </form>
         <form name="packs2">
-        	<input name="pack2" type="number" placeholder="Цена 2 пачки сигарет"/>  
+        	<input name="pack2" id="pack2" type="number" placeholder="Цена 2 пачки сигарет"/>  
         </form>
         <form name="packs3">
-        	<input name="pack3" type="number" placeholder="Цена 3 пачки сигарет"/>  
+        	<input name="pack3" id="pack3" type="number" placeholder="Цена 3 пачки сигарет"/>  
         </form>
         <form name="packs4">
-        	<input name="pack4" type="number" placeholder="Цена 4 пачки сигарет"/>  
+        	<input name="pack4" id="pack4" type="number" placeholder="Цена 4 пачки сигарет"/>  
         </form>
       </center>
       <center>
@@ -27,7 +27,12 @@
   <script type="text/javascript">
   	document.forms.calculate.onsubmit = function() {
 	  var packcig1 = document.getElementById("pack1").value;
-	  console.log(packcig1)
+	  var packcig2 = document.getElementById("pack2").value;
+	  var packcig3 = document.getElementById("pack3").value;
+	  var packcig4 = document.getElementById("pack4").value;
+
+	  var result = packcig1 + packcig2;
+	  console.log(result)
 	  return false;
 	};
   </script>
