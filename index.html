@@ -2,16 +2,35 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calculation</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+    	.required{
+		  position:relative;
+		  right:15px;
+		  top: 3px;
+		  color:red;
+		}
+		.requiredperc{
+		  position:relative;
+		  right:15px;
+		  top: 3px;
+		  color:red;
+		}
+    </style>
   </head>
   <body>
     <div>
       <center>
         <form name="packs1">
-        	<input name="pack1" id="pack1" type="number" placeholder="Цена 1 пачки сигарет" /> 
+        	<input name="pack1" id="pack1" type="text" placeholder="Цена 1 пачки сигарет" style="width:200px"/><span class="required">&#8376;</span> 
         </form>
         <form name="packs2">
-        	<input name="pack2" id="pack2" type="number" placeholder="Цена 2 пачки сигарет"/>  
+        	<input name="pack2" id="pack2" type="text" placeholder="Цена 2 пачки сигарет" style="width:200px"/><span class="required">&#8376;</span>   
+        </form>
+        <form name="percent">
+        	<input class="percent" id="percent" type="text" placeholder="Процент" style="width:200px"/><span class="requiredperc">&#37;</span>  
         </form>
       </center>
       <center>
@@ -26,12 +45,15 @@
   	document.forms.calculate.onsubmit = function() {
 	  var packcig1 = Number(document.getElementById("pack1").value);
 	  var packcig2 = Number(document.getElementById("pack2").value);
+	  var percent = Number(document.getElementById("percent").value);
+
+	  var percentitog = (percent / 100) + 1;
 
 	  var onecig1 = packcig1 / 20;
 	  var onecig2 = packcig2 / 20;
 
-	  var percentcig1 = Math.ceil(onecig1 * 1.20);
-	  var percentcig2 = Math.ceil(onecig2 * 1.20);
+	  var percentcig1 = Math.ceil(onecig1 * percentitog);
+	  var percentcig2 = Math.ceil(onecig2 * percentitog);
 
 	  var umn1 = percentcig1 * 10; 
 	  var umn2 = percentcig2 * 10; 
@@ -46,6 +68,8 @@
 	  document.getElementById("logokr2").innerHTML = percentcig2 + " тг";
 	  return false;
 	};
+	
+
   </script>
   </body>
 </html>
