@@ -23,12 +23,45 @@
 			   src: url(Klaxons.ttf); /* Путь к файлу со шрифтом */
 			   font-family: OpenSans; /* Гарнитура шрифта */
 			   src: url(OpenSans-Bold.woff); /* Путь к файлу со шрифтом */
-		  }
-		}
+			  }
+			}
 		p {
 			letter-spacing: 5px;
 		}
+
+		.input-icon {
+		  position: relative;
+		}
+
+		.input-icon > i {
+		  position: absolute;
+		  display: block;
+		  transform: translate(0, -50%);
+		  top: 50%;
+		  pointer-events: none;
+		  width: 1725px;
+		  text-align: center;
+			font-style: normal;
+		}
+
+		.input-icon > input {
+		  padding-left: 10px;
+			padding-right: 0;
+		}
+
+		.input-icon-right > i {
+		  right: 0;
+		}
+
+		.input-icon-right > input {
+		  padding-left: 0;
+		  padding-right: 25px;
+		  text-align: right;
+		}
+
+
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
   </head>
   <body>
   	<div>
@@ -39,24 +72,30 @@
     <div>
       <center>
         <form name="packs1">
-        	<input name="pack1" id="pack1" type="text" placeholder="Цена 1 пачки сигарет" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; background-color: transparent;"/><span class="required"></span> 
-        </form>
+        	<div class="input-icon">
+        	<input class="tenge" name="pack1" id="pack1" type="text" placeholder="Цена 1 пачки сигарет" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; border-width: 2px 2px 2px 2px; background-color: transparent;"/>
+        	<i style="color: white">$</i>
+       		 </div>
     	</br>
         <form name="packs2">
-        	<input name="pack2" id="pack2" type="text" placeholder="Цена 2 пачки сигарет" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; background-color: transparent;"></span>   
+        	<input class="tenge" name="pack2" id="pack2" type="text" placeholder="Цена 2 пачки сигарет" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; border-width: 2px 2px 2px 2px; background-color: transparent;">  
         </form>
         </br>
         <form name="percent">
-        	<input class="percent" id="percent" type="text" placeholder="Процент" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; background-color: transparent;"></span>  
+        	<input class="percent" id="percent" type="text" placeholder="Процент" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; border-width: 2px 2px 2px 2px; background-color: transparent;">
         </form>
         </br>
-        <button onclick="calculate();" style="width: 310px; height: 40px; border-radius: 20px; font-size: 15px; color: white; border-color: #66FCF1; background-color: transparent;">Произвести расчет</button></br></br>
+        <button onclick="calculate();" style="width: 310px; height: 40px; border-radius: 20px; border-width: 2px 2px 2px 2px; font-size: 15px; color: white; border-color: #66FCF1; background-color: transparent;">Произвести расчет</button></br></br>
       </center>
       <center>
       	<!---<form name="calculate"><input style="font-size: 15px;"type="submit" value="Произвести расчет" style="width: 300px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; background-color: transparent;"/></form></br>--->
       	<span style="color: white; font-family: 'OpenSans-Bold'">Стоимость одной пачки с процентами:</span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Итоговая цена:</span>
       	<span style="color: red; font-family: 'OpenSans-Bold';" id="result"></span></br></br>
+      	<span style="color: white; font-family: 'OpenSans-Bold'">Стоимость двух пачек без процентов:</span></br>
+      		<span style="color: red; font-family: 'OpenSans-Bold';" id="sum"></span></br></br>
+      	<span style="color: white; font-family: 'OpenSans-Bold'">Окупаемость: </span>
+      		<span style="color: red; font-family: 'OpenSans-Bold';" id="okup"></span></br></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Стоимость одной сигареты без процентов:</span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Сигарета из 1 пачки:</span>
       	<span style="color: red;" id="log1"></span></br>
@@ -69,7 +108,9 @@
       	<span style="color: red;" id="logokr2"></span></br>
       </center>
     </div>
-  <script type="text/javascript">
+  <script type="text/javascript"> 
+ 	
+
   	  function calculate () {
 	  var packcig1 = Number(document.getElementById("pack1").value);
 	  var packcig2 = Number(document.getElementById("pack2").value);
@@ -82,11 +123,15 @@
 	  var umn1 = percentcig1 * 10; 
 	  var umn2 = percentcig2 * 10; 
 	  var result = umn1 + umn2;
+	  var sum = packcig1 + packcig2;
+	  var okup = (result * 2) - sum;
 	  document.getElementById("result").innerHTML = result + " тенге";
 	  document.getElementById("log1").innerHTML = onecig1 + " тенге";
 	  document.getElementById("log2").innerHTML = onecig2 + " тенге";
 	  document.getElementById("logokr1").innerHTML = percentcig1 + " тенге";
 	  document.getElementById("logokr2").innerHTML = percentcig2 + " тенге";
+	  document.getElementById("sum").innerHTML = sum + " тенге";
+	  document.getElementById("okup").innerHTML = okup + " тенге";
 	};
   </script>
   </body>
