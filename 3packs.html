@@ -54,9 +54,9 @@
   		<center>
   			<p style="font-size: 40px; color: #66FCF1; font-family: 'Klaxons'">FLUFF</p>
         <a href="2packs">2 packs</a>
-        <a href="4packs">4 packs</a>
-        <a href="5packs">5 packs</a>
-        <a href="6packs">6 packs</a>
+        <a href="3packs">4 packs</a>
+        <a href="4packs">5 packs</a>
+        <a href="5packs">6 packs</a>
   		</center>
   </div>
     <div>
@@ -87,7 +87,7 @@
       	<span style="color: red; font-family: 'OpenSans-Bold';" id="result"></span></br></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Стоимость двух пачек без процентов:</span></br>
       	<span style="color: red; font-family: 'OpenSans-Bold';" id="sum"></span></br></br>
-      	<span style="color: white; font-family: 'OpenSans-Bold'">Окупаемость c 3 пачек: </span>
+      	<span style="color: white; font-family: 'OpenSans-Bold'">Окупаемость c 6 пачек: </span>
       	<span style="color: red; font-family: 'OpenSans-Bold';" id="okup"></span></br></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Стоимость одной сигареты без процентов:</span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Сигарета из 1 пачки:</span>
@@ -116,16 +116,13 @@
 			  let percentitog = (percent / 100) + 1;
 			  let onecig1 = packcig1 / 20; // одна сигарета цена 
 			  let onecig2 = packcig2 / 20;
-			  let onecig3 = packcig3 / 20;
-			  let onecig4 = packcig4 / 20;
-			  let onecig5 = packcig5 / 20;
-			  let onecig6 = packcig6 / 20; // конец
+			  let onecig3 = packcig3 / 20; // конец
 			  let percentcig1 = Math.ceil(onecig1 * percentitog); // округление и суммирование процента
 			  let percentcig2 = Math.ceil(onecig2 * percentitog);
 			  let percentcig3 = Math.ceil(onecig3 * percentitog); // конец
 			  let umn1 = percentcig1 * umnozhitelsig; // суммирование всех сигарет вместе в пачку
 			  let umn2 = percentcig2 * umnozhitelsig; 
-			  let umn3 = percentcig3 * umnozhitelsig;  // конец
+			  let umn3 = percentcig3 * 8; //8 - (+2, так как выходит 18 сигарет)
 			  let result = umn1 + umn2 + umn3; // итог. стоимость одной пачки
 			  let sum = packcig1 + packcig2 + packcig3; // стоимость пачек без процентов
 			  let okup = (result * 3) - sum; 
