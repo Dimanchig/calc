@@ -39,70 +39,79 @@
 			font-family: Times New Roman;
 			font-style: normal;
 			font-weight: normal;
-			font-size: 16px;
+			font-size: 10px;
 			line-height: 18px;
 			text-align: center;
 
 			color: #FFFFFF;
 
 		}
+		.btn {
+		    display: inline-block; /* Строчно-блочный элемент */
+		    border-radius: 20px; /* Скругляем уголки */
+		    background-color: transparent; /* Серый цвет фона */
+		    color: #fff; /* Белый цвет текста */
+		    padding: 5px 10px; /* Поля вокруг текста */
+		    text-decoration: none; /* Убираем подчёркивание */
+		    border: 1px solid #C3073F;
+		   }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
   </head>
   <body>
   	<div>
   		<center>
-  			<p style="font-size: 40px; color: #66FCF1; font-family: 'Klaxons'">FLUFF</p>
-        <a href="2packs">2 packs</a>
-        <a href="3packs">4 packs</a>
-        <a href="4packs">5 packs</a>
-        <a href="5packs">6 packs</a>
+  		<p style="font-size: 50px; color: #ffffff; font-family: 'Klaxons'">FLUFF</p>
+        <a class="btn" href="2packs">2 packs</a>
+        <a class="btn" href="3packs">4 packs</a>
+        <a class="btn" href="4packs">5 packs</a>
+        <a class="btn" href="5packs">6 packs</a>
+    	</br></br></br>
   		</center>
   </div>
     <div>
       <center>
         <form name="packs1">
         	<div class="input-icon">
-        	<input class="tenge" name="pack1" id="pack1" type="text" placeholder="Цена 1 пачки сигарет" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; border-width: 2px 2px 2px 2px; background-color: transparent;"/>
-        	<i style="color: white">$</i>
+        	<input class="tenge" name="pack1" id="pack1" type="text" placeholder="Цена 1 пачки сигарет" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #C3073F; border-width: 2px 2px 2px 2px; background-color: transparent;"/>
        		 </div>
     	</br>
         <form name="packs2">
-        	<input class="tenge" name="pack2" id="pack2" type="text" placeholder="Цена 2 пачки сигарет" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; border-width: 2px 2px 2px 2px; background-color: transparent;">  
+        	<input class="tenge" name="pack2" id="pack2" type="text" placeholder="Цена 2 пачки сигарет" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #C3073F; border-width: 2px 2px 2px 2px; background-color: transparent;">  
         </form>
         </br>
         <form name="packs3">
-        	<input class="tenge" name="pack3" id="pack3" type="text" placeholder="Цена 3 пачки сигарет" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; border-width: 2px 2px 2px 2px; background-color: transparent;">  
+        	<input class="tenge" name="pack3" id="pack3" type="text" placeholder="Цена 3 пачки сигарет" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #C3073F; border-width: 2px 2px 2px 2px; background-color: transparent;">  
         </form>
         </br>
         <form name="percent">
-        	<input class="percent" id="percent" type="text" placeholder="Процент" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #66FCF1; border-width: 2px 2px 2px 2px; background-color: transparent;">
+        	<input class="percent" id="percent" type="text" placeholder="Процент" style="width: 300px; border-radius: 20px; height: 30px; font-size: 15px; color: white; border-color: #C3073F; border-width: 2px 2px 2px 2px; background-color: transparent;">
         </form>
         </br>
-        <button onclick="" id="submit" style="width: 310px; height: 40px; border-radius: 20px; border-width: 2px 2px 2px 2px; font-size: 15px; color: white; border-color: #66FCF1; background-color: transparent;">Произвести расчет</button></br></br>
+        <button onclick="" id="submit" style="width: 310px; height: 40px; border-radius: 20px; border-width: 2px 2px 2px 2px; font-size: 15px; color: white; border-color: #C3073F; background-color: transparent;">Произвести расчет</button></br></br>
       </center>
     <center>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Стоимость одной пачки с процентами:</span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Итоговая цена:</span>
-      	<span style="color: red; font-family: 'OpenSans-Bold';" id="result"></span></br></br>
+      	<span style="color: #6F2232; font-family: 'OpenSans-Bold';" id="result"></span></br></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Стоимость двух пачек без процентов:</span></br>
-      	<span style="color: red; font-family: 'OpenSans-Bold';" id="sum"></span></br></br>
+      	<span style="color: #6F2232; font-family: 'OpenSans-Bold';" id="sum"></span></br></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Окупаемость c 6 пачек: </span>
-      	<span style="color: red; font-family: 'OpenSans-Bold';" id="okup"></span></br></br>
+      	<span style="color: #6F2232; font-family: 'OpenSans-Bold';" id="okup"></span></br></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Стоимость одной сигареты без процентов:</span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Сигарета из 1 пачки:</span>
-      	<span style="color: red;" id="log1"></span></br>
+      	<span style="color: #6F2232;" id="log1"></span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Сигарета из 2 пачки:</span>
-      	<span style="color: red;" id="log2"></span></br>
+      	<span style="color: #6F2232;" id="log2"></span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Сигарета из 3 пачки:</span>
-      	<span style="color: red;" id="log3"></span></br>
+      	<span style="color: #6F2232;" id="log3"></span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Стоимость одной сигареты c округлением и процентами:</span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Сигарета из 1 пачки:</span>
-      	<span style="color: red;" id="logokr1"></span></br>
+      	<span style="color: #6F2232;" id="logokr1"></span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Сигарета из 2 пачки:</span>
-      	<span style="color: red;" id="logokr2"></span></br>
+      	<span style="color: #6F2232;" id="logokr2"></span></br>
       	<span style="color: white; font-family: 'OpenSans-Bold'">Сигарета из 3 пачки:</span>
-      	<span style="color: red;" id="logokr3"></span></br>
+      	<span style="color: #6F2232;" id="logokr3"></span></br>
     </center>
     </div>
   <script type="text/javascript"> 
@@ -126,7 +135,7 @@
 			  let result = umn1 + umn2 + umn3; // итог. стоимость одной пачки
 			  let sum = packcig1 + packcig2 + packcig3; // стоимость пачек без процентов
 			  let okup = (result * 3) - sum; 
-			  document.getElementById("result").innerHTML = result + " тенге";
+			  document.getElementById("result").innerHTML = Math.ceil(result) + " тенге" ;
 			  document.getElementById("log1").innerHTML = onecig1 + " тенге";
 			  document.getElementById("log2").innerHTML = onecig2 + " тенге";
 			  document.getElementById("log3").innerHTML = onecig3 + " тенге";
