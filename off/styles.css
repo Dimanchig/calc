@@ -1,0 +1,134 @@
+
+@font-face {
+    font-family: 'bw_mitgabold';
+    src: url('bwmitga-bold-webfont.woff2') format('woff2'),
+         url('bwmitga-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'bw_mitgabold';
+  background-color: #000000;
+}
+.button {
+  cursor: default;
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 80px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.2s;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  animation: fadein 5s;
+  -moz-animation: fadein 5s; /* Firefox */
+  -webkit-animation: fadein 5s; /* Safari and Chrome */
+  -o-animation: fadein 5s; /* Opera */
+
+}
+.button__line {
+  position: absolute;
+  display: block;
+  
+}
+.button__line--top {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background:linear-gradient(90deg, transparent, #ffffff);
+}
+.button:hover .button__line--top {
+  left: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+.button__line--bottom {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background:linear-gradient(270deg, transparent, #ffffff);
+}
+.button:hover .button__line--bottom {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+.button__line--left {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background:linear-gradient(0deg, transparent, #ffffff);
+}
+.button:hover .button__line--left {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0s;
+}
+.button__line--right {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background:linear-gradient(180deg, transparent, #ffffff);
+}
+.button:hover .button__line--right {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0s;
+}
+.button:hover {
+  box-shadow: 0 0 10px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+  background-color: #ffffff;
+  color: #333;
+  transition-delay: 0.50s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
