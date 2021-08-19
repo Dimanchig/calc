@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'bw_mitgabold';
+    src: url('bwmitga-bold-webfont.woff2') format('woff2'),
+         url('bwmitga-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+font-family: 'bw_mitgabold';
+
+
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  animation: fadein 0.1s;
+  -moz-animation: fadein 0.1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+  -o-animation: fadein 1s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes lua {
+  0%{
+    box-shadow: 0 0 10px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+    background-color: #ffffff;
+  }
+  33% {
+    box-shadow: 0 0 10px #a1a2ff, 0 0 40px #a1a2ff, 0 0 80px #a1a2ff;
+    background-color: #a1a2ff;
+  }
+  66% {
+    box-shadow: 0 0 10px #a1a2ff, 0 0 40px #a1a2ff, 0 0 80px #a1a2ff;
+    background-color: #a1a2ff;
+  }
+  100% {
+    box-shadow: 0 0 10px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+    background-color: #ffffff;
+  }
+}
